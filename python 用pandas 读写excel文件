@@ -1,0 +1,18 @@
+1、python导入pandas，读入或写xlsx文件：需要import xlrd和openxr包
+2、vscode中python无法正确输出中文
+  import io
+  import sys
+  #改变标准输出的默认编码
+  sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+3、pandas创建excel文件
+  import pandas as pd 
+  df = pd.DataFrame({'ID':[1,2,3],'Name':['Tim','Tom','Jack']})
+  df.set_index('ID',inplace=True)
+  df.to_excel('c:\\Users\\Yushenghai\\python files\\output.xlsx')
+  print(df)
+4、pandas读取excel文件内容
+  import pandas as pd
+  data = pd.read_excel('./Setback.xlsx')     # data = pd.read_excel('./Setback.xlsx',header=1或header=none或index_col='ID')  
+  print(data.shape) #统计总共的行数和列数
+  print(data.columns)
+  print(data.head(3))
