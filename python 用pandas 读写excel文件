@@ -58,7 +58,7 @@ from datetime import date,timedelta
 #         m = m % 12
 #     return(d.year+yd,m,d.day)
 book=pd.read_excel(r'C:\Users\Yushenghai\python files\Books.xlsx',skiprows=3,usecols='C:F',index_col=None,dtype={'ID':str,'InStore':str,'Date':str})
-start=date(2019,1,1)
+start=date(2019,1,1)        #dtype和Dateframe都是字典形式，当然Dateframe也可以是list形式
 
 for i in book.index:
     book['ID'].at[i] = i + 1
